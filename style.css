@@ -1,0 +1,294 @@
+
+/*  ? --------------------------------- Responsive adjustement by screen --------------------------------- */
+/* @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)
+/*Ipad
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px)
+/* Smartphones (portrait and landscape)
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5)
+/*Iphone 4
+@media only screen and (min-device-pixel-ratio : 1.5)
+/*Iphone 4
+
+@media handheld and (max-width: 960px)
+/*handheld*/ 
+ @media only screen and (max-width: 1320px)and (min-width:1024px){
+     nav{
+        display: grid;
+        grid-template-columns:5% 0.1fr 2fr 0.1fr 5% ;
+     }
+     .logo{
+       height: 70px;
+   }
+   .navlinks-div{
+       font-size: 12px;
+       letter-spacing: 0px;
+   }
+   .hamburger{
+       height: 0px;
+   }
+   .title-div h1{
+       font-size: 50px;
+   }
+   .title-div h2{
+       font-size: 30px;
+   }
+} 
+
+ @media only screen and (max-width : 1023px) {
+     nav{
+    display: grid;
+    grid-template-columns:5% 0.1fr 1.2fr 0.1fr 5% ;
+     }
+   .hamburger{
+       height: 20px;
+   }
+   .logo{
+       height: 50px;
+   }
+   .title-div h1{
+       font-size: 35px;
+   }
+   .title-div h2{
+       font-size: 25px;
+   }
+   .navlinks-div{
+       padding-top: 5%;
+       padding-bottom: 15%;
+        font-size: 18px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 0px;
+        height:93vh;
+        top:7vh;
+        background-color: rgb(20, 7, 53);
+        display: flex;
+        flex-direction: column;
+        z-index: 3;
+        align-items: center;
+        width: 40%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .navlinks-div li {
+        opacity: 0;
+    }
+ }
+ @media only screen and (max-width : 768px){
+    .navlinks-div li a {
+        font-size: 10px;
+    }
+    .title-div h1{
+       font-size: 35px;
+   }
+   .title-div h2{
+       font-size: 21px;
+   }
+ }
+
+  @media only screen and (max-width : 450px){
+    .title-div h1{
+       font-size: 26px;
+   }
+   .title-div h2{
+       font-size: 18px;
+   }
+ }
+  @media only screen and (max-width : 375px){
+    .title-div h1{
+       font-size: 23px;
+   }
+   .title-div h2{
+       font-size: 15px;
+   }
+ }
+  @media only screen and (max-width : 320px){
+    .title-div h1{
+       font-size: 19px;
+   }
+   .title-div h2{
+       font-size: 12px;
+   }
+ }
+/*  ?--------------------------------- NAVIGATION styling --------------------------------- */
+/* ? Navigation links animation to fade in nicely */
+ @keyframes navLinkFade{
+     from{
+         opacity: 0;
+         transform: translatey(50px);
+     }to{
+         opacity: 1;
+         transform: translatey(0px);
+     }
+ }
+ @keyframes imgFadeout{
+     from{ 
+         opacity: 1;
+         border-radius: 15px 50px;
+     }
+     to{
+         opacity: 0;
+        border-radius: 0%;
+     }
+ }
+ @keyframes imgFadein{
+     from{ 
+         opacity: 0;
+     }
+     to{
+         opacity: 1;
+     }
+ }
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+body , html{
+	position:relative;
+	overflow-x:hidden;
+}
+
+ /* ? Animate burger menu */
+ .toggle  .line1 {
+    transform: rotate(-45deg) translate(-5px,6px);
+ }
+ .toggle  .line2 {
+     opacity: 0;
+ }
+ .toggle  .line3 {
+     transform: rotate(45deg) translate(-5px,-6px);
+ }
+
+nav{
+    display: grid;
+    grid-template-columns:5% 1fr 2fr 0.2fr 5% ;
+    min-height: 7vh;
+    max-height: 7vh;
+    align-items: center;
+}
+.logo{
+    margin-top: 12px;
+    grid-column: 2/3;
+}
+.hamburger div{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin:5px;
+    transition: all 0.4s ease;
+}
+.burger-div{
+    height: auto;
+    margin-left: auto;
+    cursor: pointer;
+    grid-column: 4/5;
+    text-align: end;
+    z-index: 3;
+}
+
+.navlinks-div{
+    grid-column: 3/4;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.navlinks-div li{
+    list-style-type: none;
+    opacity: 0;
+}
+.navlinks-div li a{
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    color: white;
+}
+ .nav-active{
+    transform:translateX(0%);
+}
+.navlinks-div li a:hover{
+    transition: color 0.3s ease-in-out;
+    color: #f5716d;
+}
+/* ? --------------------------------- Section-1 styling --------------------------------- */
+.slider{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-position-x: right;
+    background-position-y:25%;
+    /* background: linear-gradient(to right,#34495e,#2c3e50 );  */
+    background-image: url('./assets/backgound-abstract.jpg');
+    background-repeat: no-repeat;
+    text-align: center;
+    /* background: linear-gradient(to right,#0d93df,#00a9d8 );  465163*/
+    z-index: -1;
+}
+.s1 {
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+    
+}
+.hero {
+    height: 60vh;
+    width: 100vh;
+    position: absolute;
+}
+.hero::after{
+    content:"";
+    background: linear-gradient(to left, white , black );
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.6;
+    border-radius: 15px 50px;
+}
+.hero img {
+    width:100% ;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px 50px;
+}
+.title-div{
+    position: absolute;
+    top:45%;
+    left: 10%;
+    z-index: 2; 
+    width: auto;
+}
+.title {
+    font-size: 65px;
+    font-weight: 700;
+    margin: 0;
+    color: #F98B88;
+    background: transparent;
+    background: -moz-linear-gradient(top, #F98B88 10%, #FFFFFF 100%);
+    background: -webkit-linear-gradient(top, #F98B88 10%, #FFFFFF 100%);
+    background: -ms-linear-gradient(top, #F98B88 10%, #FFFFFF 100%);
+    background: linear-gradient(to bottom, #F98B88 10%, #FFFFFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+.subtitle{
+    font-size: 30px;
+    margin: 0;
+    color: white;
+    
+}
+
+
+
+
+
+
+
