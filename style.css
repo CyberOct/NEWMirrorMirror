@@ -58,8 +58,9 @@
         letter-spacing: 0px;
         position: absolute;
         right: 0px;
-        height:93vh;
+        height:86vh;
         top:7vh;
+        bottom: 7vh;
         background-color: rgb(20, 7, 53);
         display: flex;
         flex-direction: column;
@@ -120,25 +121,24 @@
          transform: translatey(0px);
      }
  }
- @keyframes imgFadeout{
-     from{ 
-         opacity: 1;
-         border-radius: 15px 50px;
-     }
-     to{
-         opacity: 0;
-        border-radius: 0%;
-     }
- }
- @keyframes imgFadein{
-     from{ 
-         opacity: 0;
-     }
-     to{
-         opacity: 1;
-     }
- }
-
+@keyframes slideIn{
+    from{
+        opacity: 0;
+        transform: translatex(300%);
+    }to{
+        opacity: 1;
+        transform: translatex(0px);
+    }
+}
+@keyframes slideDown{
+   from{
+        transform : translatey(0%);
+   }
+   to{
+        transform : translatey(135%);
+   }
+}
+@keyframes 
  * {
     margin: 0;
     padding: 0;
@@ -149,7 +149,8 @@
 }
 body , html{
 	position:relative;
-	overflow-x:hidden;
+    overflow-x:hidden;
+   
 }
 
  /* ? Animate burger menu */
@@ -163,7 +164,7 @@ body , html{
      transform: rotate(45deg) translate(-5px,-6px);
  }
 
-nav{
+nav {
     display: grid;
     grid-template-columns:5% 1fr 2fr 0.2fr 5% ;
     min-height: 7vh;
@@ -202,38 +203,40 @@ nav{
 }
 .navlinks-div li a{
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     color: white;
+    border-bottom: 2px solid transparent;
 }
  .nav-active{
     transform:translateX(0%);
 }
 .navlinks-div li a:hover{
-    transition: color 0.3s ease-in-out;
     color: #f5716d;
+    border-bottom: 1px solid #f5716d;
+    transition: all 0.3s ease-in-out;
 }
 /* ? --------------------------------- Section-1 styling --------------------------------- */
 .slider{
     position: absolute;
     top:0;
-    left: 0;
+    left: 0px;
     width: 100%;
     height: 100vh;
     background-position-x: right;
-    background-position-y:25%;
+    background-position-y:50%;
     /* background: linear-gradient(to right,#34495e,#2c3e50 );  */
     background-image: url('./assets/backgound-abstract.jpg');
     background-repeat: no-repeat;
+    background-attachment: fixed;
     text-align: center;
     /* background: linear-gradient(to right,#0d93df,#00a9d8 );  465163*/
     z-index: -1;
 }
 .s1 {
     display: flex;
-    height: 90vh;
+    height: 93vh;
     justify-content: center;
     align-items: center;
-    
 }
 .hero {
     height: 60vh;
@@ -257,6 +260,7 @@ nav{
     object-fit: cover;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 15px 50px;
+    
 }
 .title-div{
     position: absolute;
@@ -283,12 +287,121 @@ nav{
     font-size: 30px;
     margin: 0;
     color: white;
-    
+    text-align: start;
+}
+/* ? --------------------------------- Section-2 styling --------------------------------- */
+.s2{
+    height: 150vh;
+    padding-top:80px;
+    background-color: #e8e8e8;
+}
+.s2 h1{
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 40px ;
+}
+.aboutUsIntro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  justify-content: center;
+}
+.aboutUsImgContainer h2,h3,h5{
+    text-align: center;
+}
+.aboutUsImgContainer h2, h5{
+    font-size: 30px;
+}
+.aboutUsImgContainer h3{
+    font-size: 27px;
+}
+.aboutUsImgContainer{
+    margin-top:20px;
+    position: absolute;
+    top:28%;
+}
+.aboutUsImg{
+    top:0%;
+    opacity: 0;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+}
+.description p{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2%;
+}
+.split{
+    position: absolute;
+    top:44%;
+    height:240px;
+    width: 100%;
+    margin: auto;
+    display: block;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    background-repeat: no-repeat;
+}
+.split img{
+    width: 100%;
+    max-height: 100%;
+}
+/* .aboutUsIntro h1,h2{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 200;
+    margin-bottom: 20px;
 }
 
+.aboutUsIntro h2{
+    margin-top:40px;
+    font-size:30px;
+}
+.aboutUsIntro h3{
+    font-size: 30px;
+}
+.aboutUsIntro h5{
+    font-size: 20px;    
+    padding-bottom: 40px;
+}
+.aboutUsIntro h3,h5 {
+    padding-top:10px;
+    width: 100%;
+    color:black;
+    text-align: center;
+
+}
+.aboutUsImgContainer{
+   position: absolute;
+   left:33%;
+   display: flex;
+   flex-direction: column;
+}
+.aboutUsImg{
+    opacity: 0;
+    border-style: none;
+    border-radius: 50%;
+    box-sizing: border-box;
+    height:250px;
+    width:250px;
+    justify-self: center;
+}
+.aboutUsIntro{ 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.description {
+    position: relative;
+    top:16%;
+    padding-left: 10%;
+    padding-right: 10%;
+    color:black;
+} */
 
 
-
-
-
-
+/* The typing effect */

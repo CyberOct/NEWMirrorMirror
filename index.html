@@ -16,7 +16,7 @@
 </head>
 <body>
         <header class="header">
-            <nav>
+            <nav class="navbar">
                 <img class="logo" src="./assets/Logo2.png" alt="Logo2">
                 <div class="navlinks-div">
                     <li class="nav-links photobooth">
@@ -42,7 +42,6 @@
                     <div class="line3"></div>
                 </div>
             </nav>
-           
                 <section class="section s1">
                     <div class="hero">
                         <img class="hero-img" src="./assets/background-4.jpg" alt="background-4">
@@ -51,12 +50,35 @@
                             <h2 class="subtitle">#STORYMAKERS</h2>
                         </div>
                     </div>
-                    
-                    <div class="slider"></div>
-                </section>
+                    <div class="slider">
+                    </div>
+                </section>  
         </header>
-        <section class="section s2">
-            <h1><br><br>SECTION 2</h1>
+
+        </section class="section12">
+        <section class="sections s2">
+            <h1>ABOUT US...</h1>
+            <div class="aboutUsIntro"> 
+                <img class="aboutUsImg" src="./assets/oana&iulian.jpg" alt="about us img">
+                <div class="aboutUsImgContainer">
+                    <h2>Let's get to know each other</h2>
+                    <h3> &mdash; Oana & Iulian &mdash;</h3>
+                    <h5>The #storymakers behind the scene</h5>
+                    <div class="description">
+                        <p>We are Oana and Iulian a.k.a Tică, the storymakers behind the Mirror Mirror - Photo Booth. Together we make that
+                            fun and
+                            professional team you need at your event. Get rid of the monotony of a classic photobooth and call us: PS: We
+                            don't need
+                            much details to figure out what you need 😊</p>
+                    </div>
+                </div>
+            </div>
+            <div class="split">
+                <img class="orangeWave" src="./assets/Orange-wave.png">
+            </div> 
+        </section>
+        <section class="sections s3">
+            <h1><br><br>SECTION 3</h1>
             <div class="description">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero sunt officiis, vitae obcaecati et quasi quos
                     excepturi, id adipisci aspernatur dicta amet soluta. Adipisci ad veritatis eligendi, labore assumenda
@@ -91,44 +113,8 @@
                     impedit.</p>
             </div>
         </section>
-        <section class="section s3">
-            <h1><br><br>SECTION 2</h1>
-            <div class="description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero sunt officiis, vitae obcaecati et quasi quos
-                    excepturi, id adipisci aspernatur dicta amet soluta. Adipisci ad veritatis eligendi, labore assumenda
-                    aliquid?
-                    Aliquid fugiat, explicabo exercitationem itaque illum sapiente amet necessitatibus iste recusandae vero
-                    blanditiis excepturi omnis porro deleniti voluptate voluptatum, molestias alias quia modi? Quas libero,
-                    blanditiis accusamus consequatur veniam a!
-                    Illum, voluptatum. Quia sed doloribus, perspiciatis ipsum rem eum eligendi beatae dolorem officia mollitia
-                    pariatur ducimus aut, reprehenderit odit numquam officiis perferendis aspernatur iste? Assumenda corporis
-                    velit aliquam vero quia.
-                    Placeat corrupti laborum maiores, recusandae quis doloribus distinctio harum laudantium cumque, aliquam non
-                    sit quod adipisci ratione, tenetur omnis nostrum est culpa quidem cum. Debitis doloremque fuga inventore
-                    natus molestias!
-                    Quod vitae atque quae, harum aliquam sunt nesciunt! Unde rem, iure dignissimos aliquid magni sapiente
-                    veritatis nobis, corporis odio pariatur ex, placeat soluta labore quae voluptas eum voluptatibus?
-                    Reprehenderit, laboriosam?
-                    Eius id nesciunt voluptate maxime temporibus excepturi facilis voluptas, vero, repellat, ea consequatur
-                    quidem. Aliquid ea, non accusantium eum obcaecati voluptatibus consequatur, deserunt sint suscipit
-                    blanditiis enim officiis, totam a!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid cupiditate veniam dignissimos ipsam suscipit
-                    distinctio vero fugit repellat fugiat voluptatibus natus neque ducimus, aperiam nisi animi consequatur magni
-                    porro recusandae.
-                    Deleniti ratione a sint animi optio. Facilis veniam aut fuga maiores officiis mollitia? Animi iusto quia
-                    libero minus sequi repellat provident aut nostrum ducimus tempora cupiditate excepturi, id incidunt debitis?
-                    Dicta sequi tenetur atque recusandae natus quis quas vero, incidunt voluptatem provident harum omnis beatae
-                    molestias distinctio! Voluptatem ut, dignissimos fuga quas rerum sit earum expedita maxime rem iusto ea.
-                    Dolore quas vel dicta libero quis totam rem commodi reprehenderit reiciendis blanditiis possimus eligendi
-                    autem, quisquam provident error quaerat nostrum repellat nemo expedita atque, laborum sequi illum!
-                    Distinctio, culpa? Similique.
-                    Error dolores officia delectus rem culpa nesciunt quia ut quidem! Reprehenderit quaerat animi eligendi
-                    nesciunt, eius eaque iste autem atque pariatur molestiae quibusdam fuga velit. Numquam modi commodi nam
-                    impedit.</p>
-            </div>
-        </section>
-        <section class="section s4">
-            <h1>SECTION 2</h1>
+        <section class="sections s4">
+            <h1>SECTION 4</h1>
             <div class="description">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero sunt officiis, vitae obcaecati et quasi quos
                     excepturi, id adipisci aspernatur dicta amet soluta. Adipisci ad veritatis eligendi, labore assumenda
@@ -165,9 +151,10 @@
         </section>
     <!-- GSAP CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
-
+    <script src="./onScroll.js"></script>
     <script type="text/javascript" src="./navSlide.js" charset="utf-8" defer></script>
     <script src="./app.js"></script>
+    
 
 </body>
 </div>
