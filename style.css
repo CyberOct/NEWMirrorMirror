@@ -127,18 +127,48 @@
         transform: translatex(300%);
     }to{
         opacity: 1;
-        transform: translatex(0px);
+        transform: translatex(0%);
     }
 }
 @keyframes slideDown{
-   from{
+   from{opacity: 0;
+        transform : translatey(-160%);
+   }
+   to{opacity: 1;
         transform : translatey(0%);
    }
-   to{
-        transform : translatey(135%);
-   }
 }
-@keyframes 
+@keyframes f {
+  /*
+           +-----A
+           .     .
+           B-----+
+  
+  transit 1,2,3,4 to A
+  transit 5,6,7,8 to B
+  */
+  /*
+       2   +-----+ 3
+       1,5 .     . 4,8
+       6   +-----+ 7
+  
+  1>2>3>4=cw
+  5>6>7>8=ccw
+  */
+  from {opacity: 0;
+    clip-path:polygon(
+    100% 0,100% 0,100% 0,100% 0,/*1,2,3,4*/
+    0 100%,0 100%,0 100%,0 100%);/*5,6,7,8*/
+  }
+  10%, to {opacity: 1;
+    clip-path:polygon(
+    0 50%,0 0,100% 0,100% 50%,/*1,2,3,4*/
+    0 50%,0 100%,100% 100%,100% 50%);
+    
+   /*5,6,7,8*/  
+  }
+}
+
  * {
     margin: 0;
     padding: 0;
@@ -279,6 +309,7 @@ nav {
     background: -webkit-linear-gradient(top, #F98B88 10%, #FFFFFF 100%);
     background: -ms-linear-gradient(top, #F98B88 10%, #FFFFFF 100%);
     background: linear-gradient(to bottom, #F98B88 10%, #FFFFFF 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
@@ -290,10 +321,12 @@ nav {
     text-align: start;
 }
 /* ? --------------------------------- Section-2 styling --------------------------------- */
+/* ? --------------------------------- Section-2 -ABOUT US part --------------------------------- */
 .s2{
-    height: 150vh;
+    height: 170vh;
     padding-top:80px;
     background-color: #e8e8e8;
+
 }
 .s2 h1{
     margin-bottom: 40px;
@@ -304,104 +337,157 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-  justify-content: center;
+    justify-content: center;
 }
 .aboutUsImgContainer h2,h3,h5{
     text-align: center;
 }
-.aboutUsImgContainer h2, h5{
+.aboutUsImgContainer h2, h5, .ourMission h2 {
     font-size: 30px;
 }
 .aboutUsImgContainer h3{
     font-size: 27px;
 }
 .aboutUsImgContainer{
-    margin-top:20px;
-    position: absolute;
-    top:28%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
 }
 .aboutUsImg{
-    top:0%;
     opacity: 0;
     height: 250px;
     width: 250px;
     border-radius: 50%;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
-.description p{
+.description{
+    opacity: 0;
+}
+.description p, .ourMissionAbout p{
     padding-left: 10%;
     padding-right: 10%;
     padding-top: 2%;
 }
 .split{
-    position: absolute;
-    top:44%;
+    margin-top:1.5%;
     height:240px;
     width: 100%;
-    margin: auto;
     display: block;
     background-repeat: no-repeat;
     background-attachment: fixed;
     text-align: center;
     background-repeat: no-repeat;
 }
+/* ? --------------------------------- Section-2 -SPLIT SECTION IMAGE --------------------------------- */
 .split img{
-    width: 100%;
-    max-height: 100%;
-}
-/* .aboutUsIntro h1,h2{
-    text-align: center;
-    font-size: 40px;
-    font-weight: 200;
-    margin-bottom: 20px;
-}
-
-.aboutUsIntro h2{
-    margin-top:40px;
-    font-size:30px;
-}
-.aboutUsIntro h3{
-    font-size: 30px;
-}
-.aboutUsIntro h5{
-    font-size: 20px;    
-    padding-bottom: 40px;
-}
-.aboutUsIntro h3,h5 {
-    padding-top:10px;
-    width: 100%;
-    color:black;
-    text-align: center;
-
-}
-.aboutUsImgContainer{
-   position: absolute;
-   left:33%;
-   display: flex;
-   flex-direction: column;
-}
-.aboutUsImg{
     opacity: 0;
-    border-style: none;
-    border-radius: 50%;
-    box-sizing: border-box;
-    height:250px;
-    width:250px;
-    justify-self: center;
+    transform: rotate (90deg);
+    width: 100%;
+    max-height: 35%;
 }
-.aboutUsIntro{ 
+/* ? --------------------------------- Section-2 -OUR MISSION part --------------------------------- */
+.ourMission{
+    opacity: 0;
+    display: grid;
+    grid-template-rows: 0.3fr 1fr;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
-.description {
+.ourMissionAbout{
     position: relative;
-    top:16%;
-    padding-left: 10%;
-    padding-right: 10%;
-    color:black;
-} */
+    top: -40%;
+    grid-row:1/3;
+}
+.ourFeatures{
+    position: relative;
+    top: -80%;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+}
+.card {
+    opacity: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  cursor: pointer;
+  height: 230px;
+  margin: 20px;
+  padding: 0 20px;
+  position: relative;
+  -webkit-tap-highlight-color: rgba(0,0,0,0.025);
+  text-align: center;
+  transition: height 1000ms;
+  width: 260px;
+}
+
+@media (max-width: 767px) {
+  .card {
+    left: calc(50% - 20px);
+    transform: translateX(-50%);
+  }
+}
+.expanded {
+  height: 450px;
+}
+.label {
+  height: 120px;
+  margin-top: 30px;
+  transform: translateY(20px);
+  transition: transform 1000ms;
+}
+.card.expanded .label {
+  transform: translateY(-20px);
+}
+.text {
+ clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+  transition: clip-path 1000ms;
+}
+.card.expanded .text {
+ clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+.text-content {
+  transform: translateY(-360px);
+  transition: transform 1000ms;
+}
+.card.expanded .text-content {
+  transform: translateY(0px);
+}
+.chevron {
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 15px);
+  transform-origin: 50%;
+  transform: rotate(180deg);
+  transition: transform 1000ms;
+}
+.card.expanded .chevron {
+  transform: rotate(0deg);
+}
+.titlee {
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: 900;
+  margin: 20px 0 12px;
+}
+.body-text {
+  padding: 0 20px;
+}
+/* ? --------------------------------- Section-3 -PORTOFOLIO --------------------------------- */
+.s3{
+    color:rgb(206, 206, 206);
+    height: 100vh;
+    background-color: black;
+    background-image: url('./assets/wave.png');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+    text-align: center;
+}
 
 
-/* The typing effect */
