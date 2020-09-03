@@ -118,7 +118,57 @@
     .navlinks-div li {
         opacity: 0;
     }
- }
+    .s2 h1{
+       font-size: 25px !important;
+       margin-bottom: 0px !important;
+   }
+   .aboutUsImgContainer h2,h5{
+       font-size: 15px !important;
+   }
+   .aboutUsImg{
+       height: 100px !important;
+       width: 100px !important;
+   }
+   .aboutUsImgContainer h3{
+       font-size: 13px !important;
+   }
+   .description p{
+       font-size: 12px;
+   }
+   .orangeWave{
+       max-height: 20% !important ;
+   }
+   .ourMissionAbout {
+       transform:translateY(-60px);
+   }
+   .ourMissionAbout h2{
+       font-size: 17px !important;
+   }
+   .ourMissionAbout p{
+       font-size: 12px;
+   }
+   .card{
+        width: 200px !important;
+   }
+   .ourFeatures{
+       transform: translateY(-80px);
+        grid-template-columns: repeat(2, 1fr) !important;
+   }
+   .label{
+       height:80px !important;
+   }
+   .titlee{
+       font-size: 0.9em;
+   }
+   .body-text{
+       font-size: 12px;
+   }
+   .s2 {
+       height: 155vh !important;
+   }
+}
+  
+ 
  @media only screen and (max-width : 768px){
     .navlinks-div li a {
         font-size: 10px;
@@ -222,6 +272,9 @@
     font-weight: 300;
     letter-spacing: 3px;
 }
+.break {
+       display: none;
+    }
 body , html{
 	position:relative;
     overflow-x:hidden;
