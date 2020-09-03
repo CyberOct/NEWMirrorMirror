@@ -1,13 +1,13 @@
 const hero = document.querySelector(".hero");
 const slider = document.querySelector('.slider');
 const logo = document.querySelector('.logo');
-//const hamburger = document.querySelector('.hamburger');
+const hamburger = document.querySelector('.hamburger');
 const title = document.querySelector('.title');
 const subTitle = document.querySelector('.subtitle');
 
 
 
-
+gsap.fromTo(hamburger, { opacity: 0, x: 100 }, { opacity: 1, x: 0, duration: 1, delay: 2 });
 gsap.fromTo(title, { opacity: 0, x: 100 }, { opacity: 1, x: 0, duration: 1, delay: 2 });
 gsap.fromTo(subTitle, { opacity: 0, x: 100 }, { opacity: 1, x: 0, duration: 1, delay: 2 });
 gsap.fromTo(hero, { height: '0%' }, { height: '60vh', duration: 1, ease: Power2.easeInOut });
