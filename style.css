@@ -73,9 +73,6 @@
    .body-text{
        font-size: 12px;
    }
-   /* .s2 {
-       height: 150vh !important;
-   } */
 
 } 
 
@@ -163,9 +160,6 @@
    .body-text{
        font-size: 12px;
    }
-   /* .s2 {
-       height: 155vh !important;
-   } */
 }
   
  
@@ -237,9 +231,6 @@
    .body-text{
        font-size: 12px;
    }
-   /* .s2 {
-       height: 192vh !important;
-   } */
  }
 
   @media only screen and (max-width : 450px){
