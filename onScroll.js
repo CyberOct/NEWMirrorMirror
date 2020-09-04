@@ -6,8 +6,6 @@ const onScroll = () => {
     const ourFeatures = document.getElementsByClassName('card');
     
     window.addEventListener('scroll', () => {
-        console.log(window.pageYOffset);
-        console.log(ourFeatures);
         if(window.pageYOffset >= 600){
             container[0].style.animation = 'slideDown 1.5s cubic-bezier(0.4, 0, 1, 1) forwards 1s';
             aboutUsImg[0].style.animation = 'slideIn 1.5s cubic-bezier(0.4, 0, 1, 1) forwards 1s';
@@ -26,5 +24,6 @@ const onScroll = () => {
             };
         }
     })
+    
 }
 onScroll();

@@ -73,9 +73,9 @@
    .body-text{
        font-size: 12px;
    }
-   .s2 {
+   /* .s2 {
        height: 150vh !important;
-   }
+   } */
 
 } 
 
@@ -163,9 +163,9 @@
    .body-text{
        font-size: 12px;
    }
-   .s2 {
+   /* .s2 {
        height: 155vh !important;
-   }
+   } */
 }
   
  
@@ -179,6 +179,67 @@
    .title-div h2{
        font-size: 21px;
    }
+    .s2 h1{
+       font-size: 20px !important;
+       margin-bottom: 10px !important;
+   }
+   .aboutUsImgContainer h2,h5{
+       font-size: 12px !important;
+       margin-bottom: 10px !important;
+   }
+   .aboutUsImg{
+       height: 80px !important;
+       width: 80px !important;
+   }
+   .aboutUsImgContainer h3{
+       font-size: 10px !important;
+       margin-bottom: 10px !important;
+   }
+   .description p{
+       font-size: 12px;
+   }
+   .orangeWave{
+       max-height: 15% !important ;
+       position: relative;
+       top: 15px;
+   }
+   .ourMissionAbout {
+       transform:translateY(-60px);
+   }
+   .ourMissionAbout h2{
+       font-size: 15px !important;
+   }
+   .ourMissionAbout p{
+       font-size: 12px;
+   }
+   .card{
+        width: 250px !important;
+        height: 150px !important;
+   }
+   .expanded{
+       height:350px !important;
+   }
+   .ourFeatures{
+       transform: translateY(-80px);
+        grid-template-columns: repeat(1, 1fr) !important;
+   }
+   .label{
+       height:80px !important;
+       position: relative;
+       top:-30px;
+   }
+   .card.expanded .label{
+       transform: translateY(0px) !important;
+   }
+   .titlee{
+       font-size: 0.9em;
+   }
+   .body-text{
+       font-size: 12px;
+   }
+   /* .s2 {
+       height: 192vh !important;
+   } */
  }
 
   @media only screen and (max-width : 450px){
@@ -203,6 +264,9 @@
    }
    .title-div h2{
        font-size: 12px;
+   }
+   .ourMissionAbout {
+       transform:translateY(-30px);
    }
  }
 /*  ?--------------------------------- NAVIGATION styling --------------------------------- */
@@ -422,7 +486,7 @@ nav {
 /* ? --------------------------------- Section-2 styling --------------------------------- */
 /* ? --------------------------------- Section-2 -ABOUT US part --------------------------------- */
 .s2{
-    height: 170vh;
+    height: auto;
     padding-top:80px;
     background-color: #e8e8e8;
 
@@ -516,7 +580,6 @@ nav {
   background: white;
   border-radius: 8px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  cursor: pointer;
   height: 230px;
   margin: 20px;
   padding: 0 20px;
@@ -527,12 +590,7 @@ nav {
   width: 260px;
 }
 
-@media (max-width: 767px) {
-  .card {
-    left: calc(50% - 20px);
-    transform: translateX(-50%);
-  }
-}
+
 .expanded {
   height: 450px;
 }
@@ -562,6 +620,7 @@ nav {
   transform: translateY(0px);
 }
 .chevron {
+    cursor: pointer;
   position: absolute;
   bottom: 20px;
   left: calc(50% - 15px);
