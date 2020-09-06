@@ -11,29 +11,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
         integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
         crossorigin="anonymous" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <link rel="stylesheet" href="./style.css">
     <title>MirrorMirror</title>
 </head>
 <body>
-        <header class="header">
+        <header class="header" id="home">
             <nav class="navbar">
                 <img class="logo" src="./assets/Logo2.png" alt="Logo2">
                 <div class="navlinks-div">
                     <li class="nav-links photobooth">
-                        <a href="#"><i class="fas fa-home"></i>PHOTOBOOTH</a>
+                        <a href="#home"><i class="fas fa-home"></i>PHOTOBOOTH</a>
                     </li>
                     <li class="nav-links about">
-                        <a href="#"><i class="fas fa-address-card"></i>ABOUT US</a>
+                        <a href="#about"><i class="fas fa-address-card"></i>ABOUT US</a>
                     </li>
                     <li class="nav-links portofolio">
-                        <a href="#"><i class="fas fa-folder-open"></i>PORTOFOLIO</a>
+                        <a href="#portofolio"><i class="fas fa-folder-open"></i>PORTOFOLIO</a>
                     </li>
                     <li class="nav-links prices">
-                        <a href="#"><i class="fas fa-hand-holding-usd"></i>PRICES</a>
+                        <a href="prices"><i class="fas fa-hand-holding-usd"></i>PRICES</a>
                     </li>
                     <li class="nav-links contact">
-                        <a href="#"><i class="fas fa-comments"></i>CONTACT US</a>
+                        <a href="contact"><i class="fas fa-comments"></i>CONTACT US</a>
                     </li>
                 </div>
                 <div class="burger-div hamburger">
@@ -43,7 +43,7 @@
                     <div class="line3"></div>
                 </div>
             </nav>
-                <section class="section s1">
+                <section class="section s1" id="home" >
                     <div class="hero">
                         <img class="hero-img" src="./assets/background-4.jpg" alt="background-4">
                         <div class="title-div">
@@ -56,8 +56,8 @@
                 </section>  
         </header>
 
-        </section class="section s1">
-        <section class="sections s2">
+        </section class="section s1" >
+        <section class="sections s2" id="about">
             <h1 >ABOUT US...</h1>
             <div class="aboutUsIntro"> 
                 <div class="aboutUsImgContainer">
@@ -137,7 +137,7 @@
             </div>
             
         </section>
-        <section class="sections s3">
+        <section class="sections s3" id="portofolio">
             <h1 class='title' >PORTOFOLIO</h1>
             <div class="description">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero sunt officiis, vitae obcaecati et quasi quos
@@ -211,8 +211,6 @@
         </section>
     <!-- GSAP CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
-    <script src="./onScroll.js"></script>
-    <script type="text/javascript" src="./navSlide.js" charset="utf-8" defer></script>
     <script src="./app.js"></script>
     
 
