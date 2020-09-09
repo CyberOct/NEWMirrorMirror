@@ -75,7 +75,9 @@
    }
 
 } 
+@media only screen and (max-width:1024px){
 
+}
  @media only screen and (max-width : 1023px) {
      nav{
     display: grid;
@@ -279,9 +281,11 @@
  @keyframes navLinkFade{
      from{
          opacity: 0;
+         visibility: hidden;
          transform: translatey(50px);
      }to{
          opacity: 1;
+         visibility: visible;
          transform: translatey(0px);
      }
  }
@@ -319,12 +323,12 @@
   1>2>3>4=cw
   5>6>7>8=ccw
   */
-  from {opacity: 0;
+  0% {opacity: 0;
     clip-path:polygon(
     100% 0,100% 0,100% 0,100% 0,/*1,2,3,4*/
     0 100%,0 100%,0 100%,0 100%);/*5,6,7,8*/
   }
-  10%, to {opacity: 1;
+  100% {opacity: 1;
     clip-path:polygon(
     0 50%,0 0,100% 0,100% 50%,/*1,2,3,4*/
     0 50%,0 100%,100% 100%,100% 50%);
@@ -332,7 +336,95 @@
    /*5,6,7,8*/  
   }
 }
-
+@keyframes slideOutLeft{
+    from{opacity: 1;
+        transform: translateX(0%) scale(1);
+    }
+    20%{
+        transform: scale(.7);
+    }
+    to{
+        opacity: 0;
+        transform: translateX(-100%) scale(.7);
+    }
+}
+@keyframes slideInRight{
+    from{opacity: .7;
+        transform: translateX(100%) scale(.7);
+    }
+    80%{
+        opacity: .7;
+        transform: translateX(0%) scale(.7);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes shake{
+    0%{
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    20%{
+        transform: translate(-50%,-50%) rotate(5deg);
+    }
+    40%{
+        transform: translate(-50%,-50%) rotate(-5deg);
+    }
+    60%{
+        transform: translate(-50%,-50%) rotate(5deg);
+    }
+    80%{
+        transform: translate(-50%,-50%) rotate(-5deg);
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+}
+@keyframes flipInX {
+    0% {
+    transform: perspective(400px) rotateX(90deg) scale(.7);
+    animation-timing-function: ease-in;
+    opacity: 0;
+}
+40% {
+    transform:  perspective(400px) rotateX(-20deg) scale(.7);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+}
+60% {
+    transform:  perspective(400px) rotateX(10deg)  scale(.7);
+    opacity: 1;
+}
+80% {
+    transform: perspective(400px) rotateX(-5deg)  scale(.7);
+}
+100% {
+    transform: perspective(400px)  scale(1);
+}
+}
+/* @keyframes flipInY {
+    0% {
+    transform: translate(-50%,-50%) perspective(400px) rotateY(90deg) scale(.7);
+    animation-timing-function: ease-in;
+    opacity: 0;
+}
+40% {
+    transform: translate(-50%,-50%) perspective(400px) rotateY(-20deg) scale(.7);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+}
+60% {
+    transform: translate(-50%,-50%) perspective(400px) rotateY(10deg) scale(.7);
+    opacity: 1;
+}
+80% {
+    transform: translate(-50%,-50%) perspective(400px) rotateY(-5deg) scale(.7);
+}
+100% {
+    transform: translate(-50%,-50%) perspective(400px) scale(1);
+}
+} */
  * {
     margin: 0;
     padding: 0;
@@ -366,9 +458,10 @@ nav {
     align-items: center;
     z-index: 4;
     -webkit-transition: all 0.7s ease-in-out;
+    transition: all 0.7s ease-in-out;
 }
 .sticky{
-    height: 6vh !important;
+    height: 65px !important;
     position: fixed;
     top:0;
     width: 100%;
@@ -409,7 +502,9 @@ nav {
 .navlinks-div li{
     list-style-type: none;
     opacity: 0;
+    visibility: hidden ;
 }
+
 .navlinks-div li a{
     text-decoration: none;
     transition: all 0.3s ease-in-out;
@@ -661,13 +756,129 @@ nav {
     color:rgb(206, 206, 206);
     height: 100vh;
     background-color: black;
-    background-image: url('./assets/wave.png');
+    /* background-image: url('./assets/wave.png'); */
     background-size: 70%;
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-position: center;
     text-align: center;
-	
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+.s3 h1{
+    font-size: 50px;
+    position: absolute;
+    top:20px;
+}
+.s3 p{
+    color: wite;
+}
+.carousel{
+    height: 60vh;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position:absolute;
+    top:25%;
+
+}
+.carousel-images{
+    width: 100%;
+    height: 100%;
+    order: 2;
+    position: relative;
+}
+.carousel-images img{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    object-fit: cover;
+}
+.carousel-baptism,.carousel-corporate{
+    position: absolute;
+    opacity: 0;
+    animation-delay: 2s;
+}
+.carousel-wedding{
+    position: absolute;
+    animation-delay: 2s;
+}
+.carousel-text{
+    background-color: 	#303030;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    order:1;
+    left:0;
+    width: 40%;
+}
+.carousel-nav{
+    color:white;
+    position:absolute; 
+    top:30%;
+    left:18%;
+    transform: translateX(-18%);
+    width:10%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 3;
 }
 
-
+.carousel-navIcon{
+  background-color: grey;
+  height: 7px;
+  width: 30px;
+  border-radius: 20%;
+  cursor: pointer;
+  transition: all 1s ease;
+}
+.carousel-navIcon:hover{
+    background-color: white !important;
+    transition: all 1s ease !important;
+}
+ .carousel-nav-wedding{
+    background-color: white;
+} 
+.img-nav{
+    position: absolute;
+    display: flex;
+    width: 5%;
+    justify-content: space-between;
+    z-index: 3;
+    top:86%;
+    right: 40%;
+}
+.carousel-arrow{
+    color: white;
+    font-size: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.carousel-arrow:hover{
+    color: #f5716d;
+    transition: all 0.3s ease-in-out;
+}
+.carousel-text-title{
+    position: absolute;
+    top:5rem;
+}
+.inactive{
+    opacity: 0;
+}
+.active{
+    opacity: 1 !important;
+}
