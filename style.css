@@ -11,6 +11,19 @@
 
 @media handheld and (max-width: 960px)
 /*handheld*/ 
+ @media only screen and (max-width: 1747px)and (min-width:1605px){
+    .container:hover {
+        transform: skewY(-10deg) scale(0.8) translate(-40%,-20%) !important;
+    }
+ }
+  @media only screen and (max-width: 1604px)and (min-width:1321px){
+      .container{
+          transform:skewY(-10deg) scale(0.5) translate(-40%,-20%) !important ;
+      }
+    .container:hover {
+        transform: skewY(-10deg) scale(0.8) translate(-40%,-20%) !important;
+    }
+ }
  @media only screen and (max-width: 1320px)and (min-width:1024px){
      nav{
         display: grid;
@@ -49,17 +62,14 @@
    .description p{
        font-size: 14px;
    }
-   .orangeWave{
-       max-height: 25% !important ;
-   }
-   .ourMissionAbout {
-       transform:translateY(-60px);
+   .ourMission{
+       width: 30vw !important;
    }
    .ourMissionAbout h2{
        font-size: 20px !important;
    }
    .ourMissionAbout p{
-       font-size: 14px;
+       font-size: 14px !important;
    }
    .card {
        width: 180px !important;
@@ -73,11 +83,28 @@
    .body-text{
        font-size: 12px;
    }
-
+   .carousel-text-subtitle p{
+    font-size: 14px !important;
+    }
+    .carousel-text-title{
+        padding-bottom: 30px !important;
+    }
+    .container{
+          transform:skewY(-10deg) scale(0.5) translate(-60%,-60%) !important ;
+      }
+    .container:hover {
+        transform: skewY(-10deg) scale(0.8) translate(-60%,-20%) !important;
+    }
+    .s4 h1{
+        font-size: 30px !important;
+    }
 } 
-@media only screen and (max-width:1024px){
-
-}
+/* @media only screen and (min-width:1024px){
+    .hero{
+        height: 70vh!important;
+        width: 70vw !important;
+    }
+} */
  @media only screen and (max-width : 1023px) {
      nav{
     display: grid;
@@ -135,17 +162,14 @@
    .description p{
        font-size: 12px;
    }
-   .orangeWave{
-       max-height: 20% !important ;
-   }
-   .ourMissionAbout {
-       transform:translateY(-60px);
+   .ourMission{
+       width: 30% !important;
    }
    .ourMissionAbout h2{
        font-size: 17px !important;
    }
    .ourMissionAbout p{
-       font-size: 12px;
+       font-size: 12px !important;
    }
    .card{
         width: 200px !important;
@@ -163,6 +187,31 @@
    .body-text{
        font-size: 12px;
    }
+   .carousel-text-subtitle p{
+    font-size: 12px;
+    padding: 0px 15px !important;
+    }
+    .carousel-nav{
+        width: 20% !important;
+    }
+    .s3 h1{
+        font-size: 35px !important;
+    }
+    .carousel-title{
+        font-size: 18px;
+    }
+    .carousel-text-title{
+        padding-bottom: 30px !important;
+    }
+    .container{
+          transform:skewY(-10deg) scale(0.3) translate(-120%,-60%) !important ;
+      }
+    .container:hover {
+        transform: skewY(-10deg) scale(0.7) translate(-70%,-20%) !important;
+    }
+    .s4 h1{
+        font-size: 25px !important;
+    }
 }
   
  
@@ -200,8 +249,13 @@
        position: relative;
        top: 15px;
    }
-   .ourMissionAbout {
-       transform:translateY(-60px);
+   .ourMission{
+       position: absolute;
+       top:20% !important;
+       align-self: center !important;
+       margin: 0px !important;
+       width: 90vw!important;
+       height: auto !important;
    }
    .ourMissionAbout h2{
        font-size: 15px !important;
@@ -234,6 +288,65 @@
    .body-text{
        font-size: 12px;
    }
+   .s3 h1{
+       font-size: 30px !important;
+   }
+   .carousel{
+       flex-direction: column !important;
+       width: 90vw !important;
+       height: 80vh !important;
+       top:15% !important;
+   }
+   .carousel-text {
+       height: 30vh !important;
+       width: 90vw !important;
+       position: relative;
+   }
+   .carousel-images{
+       height: 50vh !important;
+       width: 90vw !important;
+   }
+   .carousel-nav{
+    top: 16% !important;
+    left:50vw !important;
+    transform: translateX(-50%);
+    width: 40vw !important;
+   }
+   .img-nav{
+       position: absolute !important;
+        top:96vh !important;
+        right:50vw !important;
+        transform:translateX(-60%) !important;
+   }
+   .carousel-text-title{
+       padding-bottom: 30px !important;
+   }
+   .carousel-text-title h2{
+       font-size: 15px;
+   }
+   .carousel-text-subtitle{
+       top:70px;
+   }
+   .carousel-text-subtitle p{
+       font-size: 10px !important;
+   }
+   .btn{
+    height:25px !important;
+    font-size: 16px !important;
+   }
+   .container{
+       bottom:20% !important;
+       left: 0% !important;
+       transform: skewY(-10deg) scale(0.3)translate(-80%,80%) !important;
+   }
+   .container:hover{
+       transform: skewY(-10deg) scale(0.4)translate(-40%,0%) !important;
+   }
+   .s4 h1{
+        font-size: 20px !important;
+        width: 90vw !important;
+        text-align: center!important;
+    }
  }
 
   @media only screen and (max-width : 450px){
@@ -246,6 +359,24 @@
     .navlinks-div{
         top: 8vh;
     }
+    .carousel-text-title{
+       padding-bottom: 20px !important;
+   }
+   .img-nav i{
+       font-size:20px !important;
+   }
+    .btn{
+    height:20px !important;
+    font-size: 13px !important;
+   }
+    .container{
+       bottom:20% !important;
+       left: 0% !important;
+       transform: skewY(-10deg) scale(0.3)translate(-100%,80%) !important;
+   }
+   .container:hover{
+       transform: skewY(-10deg) scale(0.39)translate(-77%,0%) !important;
+   }
  }
   @media only screen and (max-width : 375px){
     .title-div h1{
@@ -258,6 +389,21 @@
         top: 8vh;
         padding-bottom: 55%;
     }
+     .btn{
+    height:20px !important;
+    font-size: 13px !important;
+   }
+   .btn:hover{
+       letter-spacing: .25px !important;
+   }
+       .container{
+       bottom:20% !important;
+       left: 0% !important;
+       transform: skewY(-10deg) scale(0.3)translate(-105%,80%) !important;
+   }
+   .container:hover{
+       transform: skewY(-10deg) scale(0.37)translate(-85%,0%) !important;
+   }
  }
   @media only screen and (max-width : 320px){
     .title-div h1{
@@ -274,6 +420,17 @@
         top: 11vh;
         padding-bottom: 55%;
     }
+    .carousel-text-title {
+        padding-bottom:0px !important;
+    }
+      .carousel-text {
+       height: 40vh !important;
+   }
+   .carousel-images{
+       height: 40vh !important;
+       width: 90vw !important;
+   }
+
    
  }
 /*  ?--------------------------------- NAVIGATION styling --------------------------------- */
@@ -305,6 +462,16 @@
    to{opacity: 1;
         transform : translatey(0%);
    }
+}
+@keyframes slideUp{
+    from{
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0%);
+    }
 }
 @keyframes f {
   /*
@@ -429,15 +596,71 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-weight: 300;
     letter-spacing: 3px;
+    text-rendering: optimizeLegibility;
 }
 body , html{
     scroll-behavior: smooth;
 	position:relative;
     overflow-x:hidden;
-   
+
+
+}
+.btn{
+    position: relative;
+    width: auto;
+    height:30px;
+    font-size: 20px;
+    letter-spacing: .25px;
+    padding:5px 20px;
+    margin-right: 15px;
+    cursor: pointer;
+    color: white;
+    transition: .5s;
+    text-decoration: none;
+    border-bottom: 2px solid white;
+}
+
+.btn:after, .btn:before{
+    position: absolute;
+    content:"";
+    width: 2px;
+    height:0%;
+    bottom:0;
+    background-color: white;
+    transition: .5s;   
+}
+.btn:after{
+    left:0;
+}
+.btn:before{
+    right: 0;
+}
+span{
+    position:absolute;
+    width: 100%;
+    height: 0%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: -2;
+    transition: .5s;
+}
+.btn:hover:before, .btn:hover:after{
+    height: 100%;
+    transition-delay: 0s;
+}
+
+.btn:hover>span{
+    height: 100%;
+    transition-delay: .5s;
+}
+.btn:hover{
+    color:#F98B88;
+    letter-spacing: 2px;
+    transition-delay: .5s;
 }
 
  /* ? Animate burger menu */
@@ -465,8 +688,12 @@ nav {
     position: fixed;
     top:0;
     width: 100%;
-    background-color: rgb(20, 7, 53);
+   
+    background: radial-gradient(circle at center,transparent, #140735 );
     height: auto;
+}
+.sticky:hover{
+    background-color: #140735;
 }
 .sticky .logo{
     height: 55px !important;
@@ -572,6 +799,9 @@ nav {
     left: 10%;
     z-index: 2; 
     width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 .title {
     font-size: 65px;
@@ -591,6 +821,7 @@ nav {
 .subtitle{
     font-size: 30px;
     margin: 0;
+    margin-bottom: 20px;
     color: white;
     text-align: start;
 }
@@ -607,6 +838,15 @@ nav {
     margin-bottom: 40px;
     text-align: center;
     font-size: 40px ;
+}
+.s2 h1::after{
+    display: block;
+    height: 2px;
+    background-color: #F98B88;
+    content: " ";
+    width: 10%;
+    margin: 0 auto;
+    margin-top: 30px;
 }
 .aboutUsIntro{
     display: flex;
@@ -628,6 +868,7 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;    
+    margin-bottom: 5%;
 }
 .aboutUsImg{
     opacity: 0;
@@ -640,7 +881,7 @@ nav {
 .description{
     opacity: 0;
 }
-.description p, .ourMissionAbout p{
+.description p{
     padding-left: 10%;
     padding-right: 10%;
     padding-top: 2%;
@@ -655,28 +896,6 @@ nav {
     background-attachment: fixed;
     text-align: center;
     background-repeat: no-repeat;
-}
-/* ? --------------------------------- Section-2 -SPLIT SECTION IMAGE --------------------------------- */
-.split img{
-    opacity: 0;
-    transform: rotate (90deg);
-    width: 100%;
-    max-height: 35%;
-}
-/* ? --------------------------------- Section-2 -OUR MISSION part --------------------------------- */
-.ourMission{
-    opacity: 0;
-    display: grid;
-    grid-template-rows: 0.3fr 1fr;
-    text-align: center;
-}
-.ourMissionSee{
-    opacity: 1;
-}
-.ourMissionAbout{
-    position: relative;
-    top: -40%;
-    grid-row:1/3;
 }
 .ourFeatures{
     position: relative;
@@ -701,8 +920,6 @@ nav {
   transition: height 1000ms;
   width: 260px;
 }
-
-
 .expanded {
   height: 450px;
 }
@@ -755,9 +972,9 @@ nav {
 .s3{
     color:rgb(206, 206, 206);
     height: 100vh;
-    background-color: black;
+    background:linear-gradient(to bottom right,black 30% ,white );
     /* background-image: url('./assets/wave.png'); */
-    background-size: 70%;
+    
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-position: center;
@@ -770,12 +987,23 @@ nav {
     position: relative;
 }
 .s3 h1{
-    font-size: 50px;
+    color: white;
+    margin-bottom: 40px;
+    margin-top:40px;
+    text-align: center;
+    font-size: 40px ;
     position: absolute;
-    top:20px;
+    top:30px;
 }
-.s3 p{
-    color: wite;
+
+.s3 h1::after{
+    display: block;
+    height: 2px;
+    background-color: #F98B88;
+    content: " ";
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 30px;
 }
 .carousel{
     height: 60vh;
@@ -788,12 +1016,13 @@ nav {
 
 }
 .carousel-images{
-    width: 100%;
+    width: 50vw;
     height: 100%;
     order: 2;
     position: relative;
 }
 .carousel-images img{
+    background-color: black;
     position: absolute;
     top:50%;
     left:50%;
@@ -801,7 +1030,7 @@ nav {
     width: 100%;
     height: 100%;
     opacity: 0;
-    object-fit: cover;
+    object-fit: contain;
 }
 .carousel-baptism,.carousel-corporate{
     position: absolute;
@@ -809,11 +1038,10 @@ nav {
     animation-delay: 2s;
 }
 .carousel-wedding{
-    position: absolute;
     animation-delay: 2s;
 }
 .carousel-text{
-    background-color: 	#303030;
+    background-color: white;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -821,14 +1049,14 @@ nav {
     flex-direction: column;
     order:1;
     left:0;
-    width: 40%;
+    width: 30vw;
 }
 .carousel-nav{
     color:white;
     position:absolute; 
     top:30%;
-    left:18%;
-    transform: translateX(-18%);
+    left: 25vw;
+    transform: translateX(-50%);
     width:10%;
     display: flex;
     justify-content: space-between;
@@ -844,11 +1072,11 @@ nav {
   transition: all 1s ease;
 }
 .carousel-navIcon:hover{
-    background-color: white !important;
+    background-color: rgb(249, 139, 136) !important;
     transition: all 1s ease !important;
 }
  .carousel-nav-wedding{
-    background-color: white;
+    background-color: rgb(249, 139, 136);
 } 
 .img-nav{
     position: absolute;
@@ -857,7 +1085,8 @@ nav {
     justify-content: space-between;
     z-index: 3;
     top:86%;
-    right: 40%;
+    right: 35vw;
+    transform: translateX(-50%);
 }
 .carousel-arrow{
     color: white;
@@ -873,12 +1102,219 @@ nav {
     transition: all 0.3s ease-in-out;
 }
 .carousel-text-title{
-    position: absolute;
-    top:5rem;
+   padding-bottom: 100px;
+    text-transform: uppercase;
 }
 .inactive{
     opacity: 0;
 }
 .active{
     opacity: 1 !important;
+}
+.carousel-title{
+    color:black;
+   
+}
+.carousel-text-subtitle p{
+    color: black;
+    padding: 0px 30px;
+}
+
+/* ? --------------------------------- Section-4 -PRICES --------------------------------- */
+.s4 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    background-image: url("./assets/wave.png");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    object-fit: cover;
+    background:linear-gradient(to bottom left, white 50% , blue);
+}
+.s4 h1{
+    position: absolute;
+    top: 8%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    font-size: 40px;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    padding-top: 40px;
+}
+.s4 h1:after{
+    display: block;
+    height: 2px;
+    background-color: #F98B88;
+    content: " ";
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+/*? Cards styling */
+.container{
+    position: absolute;
+    top:30%;
+    left:50%;
+    width: 1050px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    transition: .5s;
+    transform: skewY(-10deg) scale(0.5)translate(0%,-50%);
+}
+.container:hover{
+    position: absolute;
+    transform: skewY(-10deg) scale(0.8) translate(-10%,-30%);
+}
+.container .cardd{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    transition: .5s;
+    
+}
+.container .cardd::before{
+    content: '';
+    position: absolute;
+    top:-15px;
+    left:0;
+    width: 100%;
+    height: 15px;
+    background: #00c0f6;
+    transform-origin: bottom;
+    transform:skewX(45deg);
+    transition: .5s;
+    
+}
+.container .cardd::after{
+    content: '';
+    position: absolute;
+    top:-15px;
+    left:-15px;
+    width: 15px;
+    height: 50%;
+    background: #00c0f6;
+    transform-origin: left;
+    transform:skewY(45deg);
+    transition: .5s;
+    border-bottom: 300px solid rgb(161, 161, 161);
+}
+.container .cardd:hover{
+    transform:translateY(-60px) scale(1);
+}
+.container .cardd .imgBx{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: #00c7ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container .cardd .imgBx i{
+    font-size:60px;
+    color:white;
+    border: solid;
+    padding: 15px;
+    border-radius: 50%;
+}
+.container .cardd .imgBx h3{
+    position: relative;
+    color: white;
+    margin-top: 10px;
+}
+.container .cardd .content{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    padding-top: 20px;
+    padding-left: 10px;
+    color: white;
+    text-align: start;
+    background-color: rgb(161, 161, 161);
+    display: flex;
+    flex-direction: column;
+}
+.container .cardd .content p:nth-child(1) i, p:nth-child(2) i, p:nth-child(3) i{
+    font-size: 25px;
+}
+.priceDetails {
+    display: flex;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    align-self: center;
+    padding-bottom: 10px;
+}
+.contactButton{
+align-self: center;
+margin-top:40px;
+
+}
+.contactButton span{
+    color: white;
+}
+.btn2{
+    text-decoration:none;
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border: 2px solid;
+    border-radius: 200px;
+    transition: all .5s;
+    color:white;
+}
+.btn2:hover{
+    letter-spacing: 7px;
+    background-color: #F98B88;
+    border-color: #F98B88;
+}
+.upTo{
+    display: flex;
+    flex-direction: column;
+    border-right: solid 2px 
+}
+.fa-users{
+    font-size: 20px;
+}
+.container .cardd .content::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom:0;
+    width:100%;
+    height: auto;
+    background: linear-gradient(transparent, transparent , rgba(0,0,0,.1));
+}
+/*Our Mission styling */
+.ourMission{
+    opacity: 0;
+    width: 40%;
+    height: 50%;
+    margin-left: 10%;
+    text-align: center;
+    border: solid 2px  #F98B88;
+    padding: 20px;
+    border-radius:20px;
+    box-shadow: 5px 10px 10px #F98B88;
+}
+.ourMissionAbout h2{
+    margin-bottom: 7%;
+    margin-top: 5%;
+}
+.ourMissionAbout p{
+    font-size: 22px;
+    letter-spacing: 2px;
+    line-height: 150%;
+}
+/* ? --------------------------------- Section-5 -CONTACT US --------------------------------- */
+.s5{
+    height: 100vh;
 }

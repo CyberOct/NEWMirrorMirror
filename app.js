@@ -10,65 +10,60 @@ const navWeeding = document.querySelector('.carousel-nav-wedding');
 const navBaptism = document.querySelector('.carousel-nav-baptism');
 const navCorporate = document.querySelector('.carousel-nav-corporate');
 const carousels = document.querySelectorAll('.carousel');
+const buttons = document.querySelector('.buttons');
 
 
 // * FUNCTIONS
 gsap.fromTo(hamburger, { opacity: 0, x: 100 }, { opacity: 1, x: 0, duration: 1, delay: 2 });
 gsap.fromTo(title, { opacity: 0, x: 100 }, { opacity: 1, x: 0, duration: 1, delay: 2 });
 gsap.fromTo(subTitle, { opacity: 0, x: 100 }, { opacity: 1, x: 0, duration: 1, delay: 2 });
-gsap.fromTo(hero, { height: '0%' }, { height: '60vh', duration: 1, ease: Power2.easeInOut });
-gsap.fromTo(hero, { width: '100%' }, { width: '90%',duration: 1.2, ease: Power2.easeInOut , delay:1});
+gsap.fromTo(buttons,{opacity:0,x:100},{opacity:1,x:0,duration:1,delay:2});
+gsap.fromTo(hero, { height: '0%' }, { height: '70vh', duration: 1, ease: Power2.easeInOut });
+gsap.fromTo(hero, { width: '100vw' }, { width: '70vw',duration: 1.2, ease: Power2.easeInOut , delay:1});
 gsap.fromTo(slider, { x: '-100%' }, { x: '0%', duration: 1.2, ease: Power2.easeInOut, delay: 1.2});
 gsap.fromTo(logo, {opacity:0 , x:100}, {opacity:1, x:0,duration: 1,delay:2});;
 
-const onScroll = () => {
-
+ const onScroll = () => {
+    
     const aboutUsImg = document.getElementsByClassName('aboutUsImg');
     const container = document.getElementsByClassName('description');
-    const orangeWave = document.getElementsByClassName('orangeWave');
     const ourMission = document.getElementsByClassName('ourMission');
     const ourFeatures = document.getElementsByClassName('card');
     const navbar = document.querySelector('.navbar');
     const portofolio = document.querySelector('.s3 .title');
-
+    console.log(window.innerHeight);
 
 
     window.addEventListener('scroll', () => {
         const innerHeight = window.innerHeight;
         const innerWidth = window.innerWidth;
         const scrollY = window.scrollY;
-        console.log(innerHeight);
         console.log(scrollY);
-
-        if (scrollY >= innerHeight / 2) {
+        if (scrollY >= innerHeight / 1.2) {
             container[0].style.animation = 'slideDown 1.5s cubic-bezier(0.4, 0, 1, 1) forwards 1s';
             aboutUsImg[0].style.animation = 'slideIn 1.5s cubic-bezier(0.4, 0, 1, 1) forwards 1s';
 
-        }
-        if (scrollY >= innerHeight / 1.7) {
-            orangeWave[0].style.animation = 'f 4s cubic-bezier(0.4, 0, 1, 1) forwards 2.5s';
         }
         if (scrollY >= innerHeight / 1.1) {
             navbar.classList.add('sticky');
             nav.style.width = '100%';
         } else {
-            if(innerWidth <=1024){
+            if(innerWidth <=1023){
                 nav.style.width = '60%';
             }else{
                 nav.style.width = '100%';
             }
             navbar.classList.remove('sticky');
-            
         }
-        if (scrollY >= innerHeight / 1.499) {
-            ourMission[0].classList.add('ourMissionSee', 'animate__animated', 'animate__flipInY', 'animate__delay-3s');
-        }
-
-        if (scrollY >= innerHeight / 1.0988) {
-
+        if (scrollY >= innerHeight /0.95) {
             for (i = 0; i < ourFeatures.length; i++) {
-                ourFeatures[i].style.animation = `navLinkFade 0.5s ease forwards ${i / 7 + 4}s`;
+                ourFeatures[i].style.animation = `navLinkFade 0.5s ease forwards ${i / 7 + 1}s`;
             };
+        }
+        if (scrollY >= innerHeight / 0.35) {
+            console.log(ourMission);
+            ourMission[0].style.animation = 'slideUp 1s ease forwards 1s';
+
         }
     })
 
@@ -110,7 +105,7 @@ const carouselNav = () => {
     
         navWeeding.addEventListener('click', () => {
             const op = checkOpacity();
-            navWeeding.style.backgroundColor = "rgb(255,255,255)";
+            navWeeding.style.backgroundColor = "rgb(249,139,136)";
             navBaptism.style.backgroundColor = "rgb(128,128,128)";
             navCorporate.style.backgroundColor = "rgb(128,128,128)";
             op.forEach(function (item,i){if(item>0 && item<1) op[i]=0;});
@@ -137,7 +132,7 @@ const carouselNav = () => {
     navBaptism.addEventListener('click', () => {
         const op = checkOpacity();
         navWeeding.style.backgroundColor = "rgb(128,128,128)";
-        navBaptism.style.backgroundColor = "rgb(255,255,255)";
+        navBaptism.style.backgroundColor = "rgb(249,139,136)";
         navCorporate.style.backgroundColor = "rgb(128,128,128)";
         op.forEach(function (item, i) { if (item === "0.7") op[i] = 0; });
         let x = op.toString();
@@ -164,7 +159,7 @@ const carouselNav = () => {
         const op = checkOpacity();
         navWeeding.style.backgroundColor = "rgb(128,128,128";
         navBaptism.style.backgroundColor = "rgb(128,128,128)";
-        navCorporate.style.backgroundColor = "rgb(255,255,255)";
+        navCorporate.style.backgroundColor = "rgb(249,139,136)";
         op.forEach(function (item, i) { if (item === "0.7")  op[i] = 0; });
         let x = op.toString();
         switch (x) {
