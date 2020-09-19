@@ -61,7 +61,6 @@ gsap.fromTo(logo, {opacity:0 , x:100}, {opacity:1, x:0,duration: 1,delay:2});;
             };
         }
         if (scrollY >= innerHeight / 0.35) {
-            console.log(ourMission);
             ourMission[0].style.animation = 'slideUp 1s ease forwards 1s';
 
         }
@@ -268,11 +267,153 @@ const carouselImgNav = () => {
         
 
 }
-
+const testimonialNav = () => {
+    const previous = document.querySelector('.fa-less-than');
+    const next = document.querySelector('.fa-greater-than');
+    const testimonialsBox = document.querySelectorAll('.testimonialsBox');
+    
+    
+        previous.addEventListener('click', () => {
+            const currentTestimonial = document.querySelector('.activeTestimonial');
+            prevTestimonial(currentTestimonial);
+        });
+        next.addEventListener('click', () => {
+            const currentTestimonial = document.querySelector('.activeTestimonial');
+            console.log(currentTestimonial);
+            nextTestimonial(currentTestimonial);
+        })
+    function nextTestimonial(currentTestimonial) {
+        const nextTestimo = currentTestimonial.nextElementSibling;
+           if(nextTestimo.classList.contains('fas')){
+               currentTestimonial.style.animation ='testimonialShake 0.5s ease';
+               animationRemove(currentTestimonial);
+           }
+           else{
+               currentTestimonial.style.animation = 'lightSpeedOutLeft 1s ease';
+               deactivateTestimonial(currentTestimonial);
+               animationRemove(currentTestimonial);
+               activateTestimonial(nextTestimo);
+               nextTestimo.style.animation = 'lightSpeedInRight 1s ease';
+               animationRemove(nextTestimo);
+           }
+       }
+    function prevTestimonial(currentTestimonial) {
+        const prevTestimo = currentTestimonial.previousElementSibling;
+        if (prevTestimo.classList.contains('fas')) {
+            currentTestimonial.style.animation = 'testimonialShake 0.5s ease';
+            animationRemove(currentTestimonial);
+        }
+        else {
+            currentTestimonial.style.animation = 'lightSpeedOutRight 1s ease';
+            deactivateTestimonial(currentTestimonial);
+            animationRemove(currentTestimonial);
+            activateTestimonial(prevTestimo);
+            prevTestimo.style.animation = 'lightSpeedInLeft 1s ease';
+            animationRemove(prevTestimo);
+        }
+    }
+        function deactivateTestimonial(element) {
+            element.classList.add('inactiveTestimonial');
+            element.classList.remove('activeTestimonial');
+        }
+        function activateTestimonial(element) {
+            element.classList.add('activeTestimonial');
+            element.classList.remove('inactiveTestimonial');
+        }
+        function animationRemove(element) {
+           element.addEventListener("animationend", () => {
+                element.style.animation = "";
+            });
+        }
+    }
+    function animatedForm(){
+        const arrows = document.querySelectorAll('.fa-arrow-down');
+        arrows.forEach(arrow => {
+            arrow.addEventListener('click', () =>{
+                const input = arrow.previousElementSibling;
+                console.log(input.placeholder);
+                const parent = arrow.parentElement;
+                const nextForm = parent.nextElementSibling;
+                const submitButton = document.querySelector('.submitButton');
+                //Check for validation
+                if (input.type ==="text" && input.placeholder === "* Full Name" && validateUser(input)) {
+                    nextSlide(parent,nextForm);
+                }else if(input.type === 'email' && validateEmail(input)){
+                    nextSlide(parent,nextForm);
+                }else if(input.type === 'tel' &&validatePhone(input)){
+                    nextSlide(parent,nextForm);
+                } else if (input.placeholder === "Your message for us" && validateMessage(input)){
+                    nextSlide(parent, nextForm);
+                    submitButton.classList.remove('inactive');
+                }
+                else{
+                    parent.style.animation ='errorShake .5s ease';
+                }
+                parent.addEventListener("animationend", () => {
+                    parent.style.animation = '';
+                })
+            });
+        });
+    }
+    const errorMsg = document.querySelector('.error');
+    const heart = document.querySelectorAll('.fa-heart');
+    heart.forEach(hearty =>{
+        hearty.style.animation = 'heartBeat .7s ease infinite';
+    })
+    function validateUser(user) {
+        if(user.value.length < 3){
+            errorMsg.innerHTML = "*Invalid name ( must be at least 3 characters)*";
+            error("linear-gradient(to left, rgb(189,87,87) , white 60%)");
+        } else{
+            error("linear-gradient(to left, #57bd8b , white 60%)");
+            errorMsg.innerHTML = "";
+            return true;
+        }
+    }
+function validateMessage(message) {
+    if (message.value.length < 10) {
+        errorMsg.innerHTML = "*Invalid message (must be at least 10 characters)*";
+        error("linear-gradient(to left, rgb(189,87,87) , white 60%)");
+    } else {
+        error("linear-gradient(to left, #57bd8b , white 60%)");
+        errorMsg.innerHTML = "";
+        return true;
+    }
+}
+    function error(color){
+        const s5 = document.querySelector('.s5');
+        s5.style.setProperty("background", color, "important");
+    }
+    function nextSlide(parent, nextForm) {
+        nextForm.classList.remove('inactive');
+        nextForm.classList.add('active');
+    }
+    function validateEmail(email) {
+        const validation = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(validation.test(email.value)){
+            error("linear-gradient(to left, #57bd8b , white 60%)");
+            errorMsg.innerHTML = "";
+            return true;
+        }else{
+            errorMsg.innerHTML = "*Invalid email address*";
+            error("linear-gradient(to left, rgb(189,87,87) , white 60%)");
+        }
+    }
+    function validatePhone(phone) {
+        const validation = /^\d{10}$/;
+        if(validation.test(phone.value)){
+            error("linear-gradient(to left, #57bd8b , white 60%)");
+            errorMsg.innerHTML = "";
+            return true;
+        } else {
+            errorMsg.innerHTML = "*Invalid phone no.*";
+            error("linear-gradient(to left, rgb(189,87,87) , white 60%)");
+        }
+    }
 //* CALL FUNCTIONS
 onScroll();
 navSlide();
 carouselNav();
 carouselImgNav();
-
-
+testimonialNav();
+animatedForm();

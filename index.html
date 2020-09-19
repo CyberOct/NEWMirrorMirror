@@ -13,6 +13,7 @@
         integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
         crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+   
     <link rel="stylesheet" href="./style.css">
     <title>MirrorMirror</title>
 </head>
@@ -65,7 +66,7 @@
         
         </section class="section s1">
         <section class="sections s2" id="about">
-            <h1>ABOUT US...</h1>
+            <h1 class="sectionTitle">ABOUT US...</h1>
             <div class="aboutUsIntro">
                 <div class="aboutUsImgContainer">
                     <h2>Let's get to know each other</h2>
@@ -141,7 +142,7 @@
         
         </section>
         <section class="sections s3" id="portofolio">
-            <h1>PORTOFOLIO</h1>
+            <h1 class="sectionTitle">PORTOFOLIO</h1>
             <div class="carousel-nav">
                 <div class="carousel-nav-wedding carousel-navIcon"></div>
                 <div class="carousel-nav-baptism carousel-navIcon"></div>
@@ -208,7 +209,7 @@
             </div>
         </section>
         <section class="sections s4" id="prices">
-            <h1>START MAKING MEMORIES</h1>
+            <h1 class="sectionTitle">START MAKING MEMORIES</h1>
             <div class="ourMission">
                 <div class="ourMissionAbout">
                     <h2>Our Mission...</h2>
@@ -224,7 +225,7 @@
                         event, as they are experienced by the guests and will put a big smile on their face.</p>
                 </div>
             </div>
-            <div class="container">
+            <div class="containerr">
                 <div class="cardd">
                     <div class="imgBx">
                         <i class="fas fa-paper-plane"></i>
@@ -239,12 +240,12 @@
                         </div>
                         <div class="priceDetails">
                             <div class="upTo">
-                                <p> up to 120 <i class="fas fa-users"></i> -
+                                <p> up to 120 <i class="fas fa-users"></i> 
                                 <h5>250€</h5>
                                 </p>
                             </div>
                            <div class="moreThan">
-                                <p> more than 150 <i class="fas fa-users"></i> -
+                                <p> more than 150 <i class="fas fa-users"></i> 
                                 <h5>350€</h5>
                                 </p>
                            </div>
@@ -296,12 +297,12 @@
                     </div>
                     <div class="priceDetails">
                         <div class="upTo">
-                            <p> up to 120 <i class="fas fa-users"></i> -
+                            <p> up to 120 <i class="fas fa-users"></i> 
                             <h5>350€</h5>
                             </p>
                         </div>
                        <div class="moreThan">
-                        <p> more than 150 <i class="fas fa-users"></i> -
+                        <p> more than 150 <i class="fas fa-users"></i> 
                         <h5>450€</h5>
                         </p>
                        </div>
@@ -312,7 +313,125 @@
                 </div>
                 </div>
         </section>
-        <section class="sections s5" id="contact"></section>
+        <section class="sections s5" id="contact">
+            <h1 class="sectionTitle">CONTACT US...
+            </h1>
+            <div class="subTitleWrapper">
+                <h2 class="sectionTitle customerReviews">OUR CUSTOMERS CAN'T LIVE WITHOUT US</h2>
+                <h2 class="sectionTitle formTitle">WE'RE HAPPY TO HEAR FROM YOU</h2>
+            </div>
+            <div class="contentWrapper">
+                <div class="sectionContainer">
+                    <div class="testimonialsContainer">
+                        <i class="fas fa-less-than"></i>
+                        <div class="testimonialsBox box-1 activeTestimonial">
+                
+                            <div class="testimonialsContent customer-1">
+                                <i class="fas fa-quote-right" class="quote"></i>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio obcaecati voluptates iste et omnis
+                                    dolores
+                                    culpa repellat ea quae reprehenderit?Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Deserunt
+                                    eius dolorem dolores totam quos cumque sed reiciendis optio voluptas explicabo.</p>
+                                <img src="./assets/customer-1.jpg" class="user" alt="customer-1-picture">
+                                <h3>Alberto Duncan</h3>
+                            </div>
+                
+                        </div>
+                        <div class="testimonialsBox box-2 inactiveTestimonial">
+                
+                            <div class="testimonialsContent customer-2">
+                                <i class="fas fa-quote-right" class="quote"></i>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio obcaecati voluptates iste et omnis
+                                    dolores
+                                    culpa repellat
+                                    ea quae reprehenderit?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt eius dolorem
+                                    dolores totam quos
+                                    cumque sed reiciendis optio voluptas explicabo.</p>
+                                <img src="./assets/customer-2.jpg" class="user" alt="customer-1-picture">
+                                <h3>Joana Silva</h3>
+                            </div>
+                
+                        </div>
+                        <div class="testimonialsBox box-3 inactiveTestimonial">
+                            <div class="testimonialsContent customer-3">
+                                <i class="fas fa-quote-right" class="quote"></i>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio obcaecati voluptates iste et omnis
+                                    dolores
+                                    culpa repellat
+                                    ea quae reprehenderit?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt eius dolorem
+                                    dolores totam quos
+                                    cumque sed reiciendis optio voluptas explicabo.</p>
+                                <img src="./assets/customer-3.jpg" class="user" alt="customer-1-picture">
+                                <h3>Milton Chapman</h3>
+                            </div>
+                        </div>
+                        <i class="fas fa-greater-than"></i>
+                    </div>
+                    
+            </div>
+            <form action="" id="form" class="form" onsubmit="return false">
+                <p class="error"></p>
+                <div class="field-name active">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="* Full Name" required>
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+                <div class="field-email inactive">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="* Email" required>
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+                <div class="field-phone inactive">
+                <i class="fas fa-phone"></i>
+                    <input type="tel" placeholder="* Phone no." required>
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+                <div class="field-text inactive">
+                    <i class="fas fa-comment"></i>
+                    <input type="text" placeholder="Your message for us" required>
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+                <div class="field-finish inactive">
+                    <i class="fas fa-heart"></i>
+                    <p>Thank you!</p>
+                    <i class="fas fa-heart"></i>
+                </div>
+                <button class="submitButton inactive" type="submit" form="form" value="Submit"><i class="fas fa-paper-plane"></i></button>
+                <div class="socialMedia">
+                    <h4>Connect with us:</h4>
+                    <ul>
+                        <li>
+                            <a href=""><i class="fab fa-facebook-square"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+                
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                    <ul class="footer-nav">
+                        <li><a href="#home"><i class="fas fa-home"></i>About us</a></li>
+                        <li><a href=""><i class="fas fa-phone"></i>Telefon: 0751123456</a></li>
+                        <li><a href=""><i class="fas fa-envelope"></i>Email: photobooth@mirrormirror.com</a></li>
+                    </ul>
+                    <ul class="social-links">
+                        <li><a href=""><i class="fab fa-facebook-square"></i></a></li>
+                        <li><a href=""><i class="fab fa-instagram"></i></a>
+                    </ul>
+                            <p>
+                                Copyright © 2020 MirrorMirror.ro All rights reserved.
+                            </p>
+                            <p>
+                            Crafted with <i class="fas fa-heart"></i> by Stefan-Octavian Butura
+                            </p>
+            </div>
+        </footer>
         
     <!-- GSAP CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
